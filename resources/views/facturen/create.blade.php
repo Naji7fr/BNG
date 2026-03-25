@@ -5,8 +5,10 @@
 @section('content')
 <div class="page-header">
     <div class="container">
+
         <h1><i class="fas fa-file-invoice-dollar me-3"></i>Nieuwe Factuur</h1>
         <p class="mb-0 mt-2 opacity-90">Maak een nieuwe factuur aan</p>
+        
     </div>
 </div>
 
