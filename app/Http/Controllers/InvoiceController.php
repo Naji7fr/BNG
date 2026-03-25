@@ -47,6 +47,7 @@ class InvoiceController extends Controller
      */
     public function create(): View
     {
+
         try {
             $patients = User::where('role', 'klant')->get();
 
@@ -56,6 +57,7 @@ class InvoiceController extends Controller
             return view('facturen.create', ['patients' => collect()])
                 ->with('error', 'Klanten konden niet worden geladen: ' . $e->getMessage());
         }
+        
     }
 
     /**
