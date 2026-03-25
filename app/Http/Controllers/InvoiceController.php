@@ -18,14 +18,17 @@ use Illuminate\Http\Request;
  * defined in routes/web.php.
  * 
  */
+
 class InvoiceController extends Controller
 {
+
     /**
      * 
      * Display a list of all invoices including their related klant.
      * Falls back to an empty list with an error message on failure.
      * 
      */
+
     public function index(): View
     {
         try {
@@ -45,6 +48,7 @@ class InvoiceController extends Controller
      * Only users with the 'klant' role are shown as selectable recipients.
      * 
      */
+
     public function create(): View
     {
 
@@ -57,7 +61,7 @@ class InvoiceController extends Controller
             return view('facturen.create', ['patients' => collect()])
                 ->with('error', 'Klanten konden niet worden geladen: ' . $e->getMessage());
         }
-        
+
     }
 
     /**
@@ -69,6 +73,7 @@ class InvoiceController extends Controller
      * and display inline field errors automatically.
      * 
      */
+
     public function store(Request $request): RedirectResponse
     {
         try {
@@ -108,6 +113,7 @@ class InvoiceController extends Controller
      * Redirects back to the index if the invoice cannot be found.
      * 
      */
+
     public function edit(int|string $id): View|RedirectResponse
     {
         try {
@@ -130,6 +136,7 @@ class InvoiceController extends Controller
      * so saving without changing the number does not trigger a duplicate error.
      * 
      */
+
     public function update(Request $request, int|string $id): RedirectResponse
     {
         try {
@@ -171,6 +178,7 @@ class InvoiceController extends Controller
      * Redirects to the index with an error message if deletion fails.
      * 
      */
+    
     public function destroy(int|string $id): RedirectResponse
     {
         try {
